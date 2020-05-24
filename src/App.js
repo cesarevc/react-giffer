@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
+import Board from './components/Board';
+import { Link, Route } from "wouter";
+
+
 function App() {
+
+  const [keyword, setKeyword] = useState('azul')
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="App-content">
+
+        <h1>GIFFER</h1>
+        <Link href="/gif/pandas">Gifs de pandas</Link>
+        <Link href="/gif/rick y morty">Gifs de rick y morty</Link>
+        <Link href="/gif/jordan">Gifs Jordan</Link>
+        <Link href="/gif/star wars">Gifs Star wars</Link>
+
+        <Route component={Board} path='/gif/:keyword' />
+       
+      </section>
     </div>
   );
 }

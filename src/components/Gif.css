@@ -1,0 +1,24 @@
+.Gif {
+    Border: 5px;
+    /* background: rgba(56, 136, 175, 0.32) ; */
+    border-radius: 6px;
+    color: aliceblue;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.Gif h4 {
+    margin: 0;
+    background: linear-gradient(to right, #3ca55c, #b5ac49);
+}
+
+.gif-img {
+   object-fit: contain;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    Border: 1px;
+}
