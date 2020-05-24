@@ -13,14 +13,17 @@ function App() {
   return (
     <div className="App">
       <section className="App-content">
-
+      
         <h1>GIFFER</h1>
         <Link href="/gif/pandas">Gifs de pandas</Link>
         <Link href="/gif/rick y morty">Gifs de rick y morty</Link>
         <Link href="/gif/jordan">Gifs Jordan</Link>
         <Link href="/gif/star wars">Gifs Star wars</Link>
+        
+        <div>
+          <Route component={Board} path='/gif/:keyword' />
+        </div>
 
-        <Route component={Board} path='/gif/:keyword' />
        
       </section>
     </div>
