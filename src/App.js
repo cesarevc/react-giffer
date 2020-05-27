@@ -1,32 +1,38 @@
 import React, {useState} from 'react';
 import './App.css';
+import Home from './pages/Home';
+import SearchResults from './pages/SearchResults';
+import Detail from './pages/Detail';
+import Context from './context/StaticContext';
 
-import Board from './components/Board';
 import { Link, Route } from "wouter";
+import  { GifsContextProvider }  from './context/GifsContext';
 
 
 function App() {
 
-  const [keyword, setKeyword] = useState('azul')
-
-
   return (
-    <div className="App">
-      <section className="App-content">
-      
-        <h1>GIFFER</h1>
-        <Link href="/gif/pandas">Gifs de pandas</Link>
-        <Link href="/gif/rick y morty">Gifs de rick y morty</Link>
-        <Link href="/gif/jordan">Gifs Jordan</Link>
-        <Link href="/gif/star wars">Gifs Star wars</Link>
-        
-        <div>
-          <Route component={Board} path='/gif/:keyword' />
-        </div>
+    <Context.Provider value={{ 
+      name: 'cesc',
+      practicanding: true
+    }} >
+      <div className="App">
+        <section className="App-content">
 
-       
-      </section>
-    </div>
+          <Link to="/">
+            <h1>GIFFER</h1>
+          </Link>
+          <GifsContextProvider>
+            <Route component={Home} path="/" />
+            <Route component={SearchResults} path="/search/:keyword" />
+            <Route component={Detail} path="/gif/:id" />
+
+          </GifsContextProvider>
+          
+                
+        </section>
+      </div>
+    </Context.Provider>
   );
 }
 
