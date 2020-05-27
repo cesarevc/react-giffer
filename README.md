@@ -14,10 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## GIFFER
 ![alt text](./src/assets/imgs/home.png)
-![alt text](./src/assets/imgs/pandas.png)
-![alt text](./src/assets/imgs/rick-morty.png)
-![alt text](./src/assets/imgs/jordan.png)
-![alt text](./src/assets/imgs/starwars.png)
+
 
 ## Available Scripts
 
